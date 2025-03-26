@@ -1,0 +1,358 @@
+2.2.5
+import java.util.Scanner;
+
+public class calculation{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first num: ");
+        double num1 = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Enter second num: ");
+        double num2 = Double.parseDouble(scanner.nextLine());
+
+        double sum = num1 + num2;
+        double difference = num1 - num2;
+        double product = num1 * num2;
+
+        Double quotient = null;
+        if(num2 != 0) {
+            quotient = num1 / num2;
+        }
+
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+
+        if(quotient != null) {
+            System.out.println("Quotient: " + quotient);
+        } else {
+            System.out.println("Cannot divide by zero");
+        }
+
+        scanner.close();
+    }
+    
+}
+
+2.2.6
+import java.util.Scanner;
+
+public class Equation{
+
+    public static void solve1(Scanner scanner) {
+        System.out.println("Enter the coefficient a (a != 0): ");
+        double a = scanner.nextDouble();
+        System.out.println("Enter the constant b: ");
+        double b = scanner.nextDouble();
+
+        if (a == 0) {
+            System.out.println("a cannot be zero.");
+        } else {
+            double solution = -b / a;
+            System.out.println("The solution is x = " + solution);
+        }
+    }
+
+    public static void solve2(Scanner scanner) {
+        System.out.println("For equation 1: a11 * x1 + a12 * x2 = b1");
+        System.out.print("Enter a11: ");
+        double a11 = scanner.nextDouble();
+        System.out.print("Enter a12: ");
+        double a12 = scanner.nextDouble();
+        System.out.print("Enter b1: ");
+        double b1 = scanner.nextDouble();
+
+        System.out.println("For equation 2: a21 * x1 + a22 * x2 = b2");
+        System.out.print("Enter a21: ");
+        double a21 = scanner.nextDouble();
+        System.out.print("Enter a22: ");
+        double a22 = scanner.nextDouble();
+        System.out.print("Enter b2: ");
+        double b2 = scanner.nextDouble();
+
+        double determinant = a11 * a22 - a12 * a21;
+        double determinantX1 = b1 * a22 - b2 * a12;
+        double determinantX2 = a11 * b2 - a21 * b1;
+
+        if (determinant == 0) {
+            if (determinantX1 == 0 && determinantX2 == 0) {
+                System.out.println("The system has infinitely many solutions.");
+            } else {
+                System.out.println("The system has no solution.");
+            }
+        } else {
+            double x1 = determinantX1 / determinant;
+            double x2 = determinantX2 / determinant;
+            System.out.println("The solution is: x1 = " + x1 + ", x2 = " + x2);
+        }
+    }
+
+    public static void solve3(Scanner scanner) {
+        System.out.println("Enter the coefficient a (a != 0): ");
+        double a = scanner.nextDouble();
+        System.out.println("Enter the coefficient b: ");
+        double b = scanner.nextDouble();
+        System.out.println("Enter the constant c: ");
+        double c = scanner.nextDouble();
+
+        if (a == 0) {
+            System.out.println("a cannot be zero.");
+            return;
+        }
+
+        double delta = b * b - 4 * a * c;
+
+        if (delta > 0) {
+            double root1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double root2 = (-b - Math.sqrt(delta)) / (2 * a);
+            System.out.println("The equation has two distinct real roots: x1 = " + root1 + ", x2 = " + root2);
+        } else if (delta == 0) {
+            double root = -b / (2 * a);
+            System.out.println("The equation has one real double root: x = " + root);
+        } else {
+            System.out.println("The equation has no real roots.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Choose the type of equation to solve:");
+        System.out.println("1. First-degree equation (ax + b = 0)");
+        System.out.println("2. System of first-degree equations (two variables)");
+        System.out.println("3. Second-degree equation (ax² + bx + c = 0)");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                solve1(scanner);
+                break;
+            case 2:
+                solve2(scanner);
+                break;
+            case 3:
+                solve3(scanner);
+                break;
+            default:
+                System.out.println("Invalid choice!");
+        }
+
+        scanner.close();
+    }
+
+}
+6.1 
+
+import javax.swing.JOptionPane;
+
+
+public class ChoosingOption {
+    public static void main(String[] args) {
+        int option = JOptionPane.showConfirmDialog(null, "Do you want to change to the first class ticket ?");
+        JOptionPane.showMessageDialog(null, "You've chosen: " + (option == JOptionPane.YES_OPTION?"Yes":"No"));
+
+        System.exit(0);
+    }
+}
+
+6.2
+import java.util.Scanner;
+
+public class InputFromKeyboard {
+    public static void main(String args[]) {
+        Scanner Keyboard = new Scanner(System.in);
+
+        System.out.println("What's your name?");
+        String strName = Keyboard.nextLine();
+
+        System.out.println("How old are you?");
+        int iAge = Keyboard.nextInt();
+
+        System.out.println("How tall are you (m)?");
+        double dHeight = Keyboard.nextDouble();
+
+        System.out.println("Mrs/ms. " + strName + ", " + iAge + " years old." + " your height is " + dHeight + ".");
+
+    }
+}
+6.3
+import java.util.Scanner;
+
+public class TrianglePattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("nhap so nguyen n: ");
+        int n = scanner.nextInt();
+        scanner.close();
+
+        for(int i = 1; i <= n; i ++) {
+            for(int j = 0; j < n - i; j ++) {
+                System.out.print(" ");
+            }
+            for(int j = 0; j < (2 * i - 1); j ++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+6.4
+import java.util.Scanner;
+
+public class DaysInMonth {
+
+    private final static String[] month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    private final static String[] abb = {"Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."};
+    private final static String[] inThreeLetter = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
+    private final static String[] num = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+
+    private final static int[] commonYear = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    private final static int[] leapYear = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    public static int getMonth(String monthInput) {
+        for (int i = 0; i < 12; i++) {
+            if (monthInput.equals(month[i])) return i;
+            if (monthInput.equals(abb[i])) return i;
+            if (monthInput.equals(inThreeLetter[i])) return i;
+            if (monthInput.equals(num[i])) return i;
+        }
+        return -1;
+    }
+
+    public static boolean isLeapYear(int year) {
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                return year % 400 == 0;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String monthInput = "";
+        int year = -1;
+        int month;
+
+        while (true) {
+            System.out.print("Enter a month (full name, abbreviation, or number): ");
+            monthInput = scanner.nextLine().trim();
+
+            month = getMonth(monthInput);
+            if (month != -1) {
+                break;
+            } else {
+                System.out.print("Invalid month input. Please try again! ");
+            }
+        }
+
+        while (true) {
+            System.out.print("Enter a year (non-negative full number): ");
+
+            if (scanner.hasNextInt()) {
+                year = scanner.nextInt();
+                if (year >= 0) {
+                    break;
+                }
+            }
+
+            scanner.nextLine();
+            System.out.println("Invalid year input. Please try again.");
+        }
+
+        int days = (isLeapYear(year) ? leapYear[month] : commonYear[month]);
+        System.out.println("Number of days: " + days);
+
+        scanner.close();
+    }
+}
+6.5
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("nhap so phan tu cua mang : ");
+        int n = scanner.nextInt();
+
+        double[] array = new double[n];
+
+        System.out.println("nhap cac phan tu cua mang: ");
+        for(int i = 0; i < n; i ++) {
+            System.out.print("phan tu thu " + (i + 1) + ": ");
+            array[i] = scanner.nextDouble();
+        }
+
+        Arrays.sort(array);
+
+        double sum = 0; 
+        for(double num : array) {
+            sum += num;
+        }
+        double average = sum/n;
+
+        System.out.println("\nMang sau khi sap xep: " + Arrays.toString(array));
+        System.out.println("Tong cac phan tu: " + sum);
+        System.out.println("Gia tri trung binh : " + average);
+
+        scanner.close();
+    }
+}
+6.6
+import java.util.Scanner;
+
+public class MatrixAddition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("nhap so hang cua ma tran : ");
+        int rows = scanner.nextInt();
+        System.out.print("nhap so cot cua ma tran : ");
+        int cols = scanner.nextInt();
+
+        int[][] matrixA = new int[rows][cols];
+        int[][] matrixB = new int[rows][cols];
+        int[][] resultMatrix = new int[rows][cols];
+
+        // ma tran A : 
+        System.out.println("nhap cac phan tu cua ma tran A : ");
+        for(int i = 0; i < rows; i ++) {
+            for(int j = 0; j < cols; j ++) {
+                System.out.print("A[" + i + "][" + j + "] = " );
+                matrixA[i][j] = scanner.nextInt();
+            }
+        }
+        
+        // ma tran B : 
+        System.out.println("Nhập các phần tử của ma trận B:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("B[" + i + "][" + j + "] = ");
+                matrixB[i][j] = scanner.nextInt();
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                resultMatrix[i][j] = matrixA[i][j] + matrixB[i][j];
+            }
+        }
+
+        System.out.println("Ma trận tổng là:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(resultMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
