@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b84d090e-7d7d-410b-9775-1d260d839bcb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/lab2/ReadingAssignment/AimsProject" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/ReadingAssignment/AimsProject" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/answer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2" beforeDir="false" afterPath="$PROJECT_DIR$/lab2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/ReadingAssignment/AimsProject/Aims.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/ReadingAssignment/AimsProject/Cart.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/ReadingAssignment/AimsProject/Cart.java" beforeDir="false" />
@@ -24,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -37,7 +40,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Aims.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab2&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/macbook/Documents/main_code/20242-OOP&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -51,6 +54,19 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="20242-OOP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="20242-OOP" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,6 +89,8 @@
       <workItem from="1742975922980" duration="3467000" />
       <workItem from="1742985301987" duration="27000" />
       <workItem from="1742985333680" duration="10000" />
+      <workItem from="1742999385552" duration="42000" />
+      <workItem from="1742999452306" duration="77000" />
     </task>
     <servers />
   </component>
