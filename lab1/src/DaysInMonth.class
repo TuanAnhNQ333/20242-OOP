@@ -1,0 +1,79 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Scanner;
+
+public class DaysInMonth {
+   private static final String[] month = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+   private static final String[] abb = new String[]{"Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."};
+   private static final String[] inThreeLetter = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"};
+   private static final String[] num = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+   private static final int[] commonYear = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+   private static final int[] leapYear = new int[]{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+   public DaysInMonth() {
+   }
+
+   public static int getMonth(String var0) {
+      for(int var1 = 0; var1 < 12; ++var1) {
+         if (var0.equals(month[var1])) {
+            return var1;
+         }
+
+         if (var0.equals(abb[var1])) {
+            return var1;
+         }
+
+         if (var0.equals(inThreeLetter[var1])) {
+            return var1;
+         }
+
+         if (var0.equals(num[var1])) {
+            return var1;
+         }
+      }
+
+      return -1;
+   }
+
+   public static boolean isLeapYear(int var0) {
+      if (var0 % 4 == 0) {
+         if (var0 % 100 == 0) {
+            return var0 % 400 == 0;
+         } else {
+            return true;
+         }
+      } else {
+         return false;
+      }
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      String var2 = "";
+      boolean var3 = true;
+
+      while(true) {
+         System.out.print("Enter a month (full name, abbreviation, or number): ");
+         var2 = var1.nextLine().trim();
+         int var4 = getMonth(var2);
+         if (var4 != -1) {
+            while(true) {
+               System.out.print("Enter a year (non-negative full number): ");
+               if (var1.hasNextInt()) {
+                  int var6 = var1.nextInt();
+                  if (var6 >= 0) {
+                     int var5 = isLeapYear(var6) ? leapYear[var4] : commonYear[var4];
+                     System.out.println("Number of days: " + var5);
+                     var1.close();
+                     return;
+                  }
+               }
+
+               var1.nextLine();
+               System.out.println("Invalid year input. Please try again.");
+            }
+         }
+
+         System.out.print("Invalid month input. Please try again! ");
+      }
+   }
+}
