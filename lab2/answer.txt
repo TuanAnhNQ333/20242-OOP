@@ -1,0 +1,34 @@
+  Question: Is JAVA a Pass by Value or a Pass by Reference programming language?
+ Lý do : 
+  Java là ngôn ngữ truyền theo giá trị hay truyền theo tham chiếu)
+Java là ngôn ngữ lập trình "pass by value".
+
+  Question: 
+
+If you create a constructor method to build a DVD by title
+then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+
+Lý do: 
+   Java không cho phép tạo hai constructor có cùng số lượng và kiểu tham số.
+   java sẽ không biết gọi constructor nào, vì cần phân biệt các constructor thông qua số lượng và kiểu của tham số, không phải tên tham số
+
+
+
+1. After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two
+objects still remain?
+
+Lý do:
+Trong Java, tham số được truyền theo cơ chế "pass-by-value" (truyền theo giá trị).
+Khi truyền đối tượng vào phương thức, nó chỉ truyền bản sao của địa chỉ đối tượng. Hoán đổi trong phương thức swap() chỉ hoán đổi bản sao,
+không ảnh hưởng đến đối tượng gốc bên ngoài.
+
+
+2. After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
+the title of the JungleDVD changed?
+
+
+Lý do:
+Title của jungleDVD thay đổi vì changeTitle() trực tiếp thay đổi giá trị thuộc tính title của đối tượng thông qua setTitle(), 
+không phải thay đổi địa chỉ đối tượng như swap().
+
+
