@@ -27,7 +27,7 @@ public class Aims {
 }
 
 /*  Question: Is JAVA a Pass by Value or a Pass by Reference programming language?
+(Java là ngôn ngữ truyền theo giá trị hay truyền theo tham chiếu)
  Lý do : 
-  Java là ngôn ngữ truyền theo giá trị hay truyền theo tham chiếu)
-Java là ngôn ngữ lập trình "pass by value".
+Java là ngôn ngữ lập trình "pass by value", nên nó là truyền giá trị.
 */
