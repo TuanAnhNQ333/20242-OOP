@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -23,7 +22,9 @@ public class Cart {
 
     public void printCart() {
         System.out.println("***** CART *****");
-        itemsOrdered.forEach(Media::print);
+        for (Media media : itemsOrdered) {
+            media.print();
+        }
         System.out.println("Total cost: " + totalCost() + "$");
     }
 

@@ -1,5 +1,5 @@
-import hust.soict.hedspi.aims.media.Media;
-import hust.soict.hedspi.aims.media.Playable;
+import aims.media.Media;
+import aims.media.Playable;
 
 public class DigitalVideoDisc extends Media implements Playable {
     private int length;
