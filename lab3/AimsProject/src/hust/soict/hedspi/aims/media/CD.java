@@ -5,7 +5,7 @@ import java.util.List;
 import javax.sound.midi.Track;
 
 public class CD extends Media {
-    private final String artist;
+    private final String artist; 
     private final List<Track> tracks = new ArrayList<>();
 
     public CD(int id, String title, String category, String artist, float cost) {
