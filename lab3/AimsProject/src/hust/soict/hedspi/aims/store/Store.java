@@ -1,7 +1,7 @@
 package hust.soict.hedspi.aims.store;
 
 import hust.soict.hedspi.aims.media.Media;
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Collection;
 
 public class Store {
