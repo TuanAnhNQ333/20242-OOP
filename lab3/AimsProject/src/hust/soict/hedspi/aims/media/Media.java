@@ -1,4 +1,4 @@
-package hust.soict.hedspi.aims.media;
+package hust.soict.hedspi.aims.media; 
 
 public abstract class Media {
     private int id;
