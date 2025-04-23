@@ -1,6 +1,5 @@
 package hust.soict.hedspi.aims.cart;
 
-
 import hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
 
