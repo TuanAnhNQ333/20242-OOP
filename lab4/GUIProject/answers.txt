@@ -1,0 +1,35 @@
+BÀI TẬP LAB 04 – LẬP TRÌNH GIAO DIỆN GUI VỚI SWING
+
+1. Sự khác biệt giữa AWT và Swing
+- AWT là thư viện giao diện nặng, phụ thuộc vào hệ điều hành. Swing là thư viện nhẹ, chạy thuần Java.
+- AWT sử dụng các lớp như  Frame ,  Label ,  TextField ; Swing dùng  JFrame ,  JLabel ,  JTextField .
+- Trong Swing, các thành phần phải được thêm vào content-pane thay vì thêm trực tiếp vào JFrame.
+- Giao diện Swing có nhiều tùy chỉnh hơn, hiện đại hơn và đồng bộ trên các hệ điều hành.
+
+2. Các Layout Manager trong Swing
+-  BorderLayout : chia cửa sổ thành các vùng NORTH, SOUTH, EAST, WEST, CENTER.
+-  GridLayout : chia khu vực thành lưới có số hàng và cột bằng nhau.
+-  BoxLayout : sắp xếp các thành phần theo chiều ngang hoặc dọc.
+-  JPanel : dùng làm container phụ để tổ chức các thành phần theo nhiều layout khác nhau.
+
+3. Xử lý sự kiện trong Swing
+- Sử dụng các listener như  ActionListener  để xử lý sự kiện (ví dụ: click nút).
+- Đăng ký listener qua phương thức  .addActionListener() .
+- Khi sự kiện xảy ra, phương thức  actionPerformed()  sẽ được gọi.
+
+4. So sánh class nội và class ngoài trong Swing
+- Class nội (inner class) như  ButtonListener  gắn chặt với logic GUI của lớp bên ngoài, dễ đọc và bảo trì.
+- Class ngoài có thể tái sử dụng nhiều nơi, phù hợp cho các chương trình lớn cần cấu trúc rõ ràng hơn.
+
+5. Mối quan hệ giữa lớp Media và GUI
+- StoreManagerScreen quản lý  Store  để hiển thị danh sách Media.
+- Mỗi  MediaStore  đại diện cho một media trên màn hình GUI.
+- Nếu media implement  Playable , giao diện sẽ hiển thị nút "Play".
+
+6. Kế thừa và trừu tượng trong phần Media
+- Lớp  Media  trừu tượng để gom logic chung cho  Book ,  DVD ,  CD .
+-  Disc  cũng là lớp trừu tượng để chia sẻ logic cho  DVD  và  CD .
+- Interface  Playable  giúp thống nhất cách phát nội dung media cho cả  Track ,  DVD ,  CD .
+
+7. Lý do sử dụng ArrayList thay vì mảng
+-  ArrayList  linh hoạt, dễ mở
