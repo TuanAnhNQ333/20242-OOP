@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="100.0">
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="CART" textFill="#004cff">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#btnViewStorePressed" prefHeight="50.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="20.0" right="20.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label text="Filter" />
+                  <TextField />
+                  <RadioButton selected="true" text="By ID">
+                     <toggleGroup>
+                        <fx:id="filterCategory" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton text="By Title" toggleGroup="$filterCategory" />
+               </children>
+            </HBox>
+            <TableView fx:id="tblMedia">
+               <columns>
+                  <TableColumn fx:id="colMediaId" text="ID" />
+                  <TableColumn fx:id="colMediaTitle" text="Title" />
+                  <TableColumn fx:id="colMediaCategory" text="Category" />
+                  <TableColumn fx:id="colMediaCost" text="Cost" />
+               </columns>
+            </TableView>
+            <HBox alignment="TOP_RIGHT" spacing="20.0">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnPlay" onAction="#btnPlayPressed" prefWidth="60.0" text="Play" />
+                  <Button fx:id="btnRemove" onAction="#btnRemovePressed" prefWidth="60.0" text="Remove" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" spacing="30.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="USE_COMPUTED_SIZE" prefWidth="USE_COMPUTED_SIZE" spacing="10.0">
+               <children>
+                  <Label text="Total:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="costLabel" text="0 $">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button style="-fx-background-color: #004cff" text="Place Order" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

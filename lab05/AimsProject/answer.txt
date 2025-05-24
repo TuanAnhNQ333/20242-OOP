@@ -1,0 +1,26 @@
+Lab 05: GUI Programming with JavaFX and Exception Handling
+Họ và tên: Nguyễn Quốc Tuấn Anh
+MSSV: 20235648
+Lớp: Việt Nhật 03
+
+---
+Câu hỏi và Trả lời:
+
+Câu hỏi 1 (Từ Mục 11: Update the Aims class): What happens when you don't update for them (the Aims class, when calling play() methods) to catch [exceptions]? [cite: 226]
+
+Trả lời:
+Khi phương thức play() của một đối tượng Media (ví dụ: DigitalVideoDisc, CompactDisc, hoặc Track) có khả năng ném ra một PlayerException (hoặc bất kỳ ngoại lệ nào khác đã được khai báo) và lớp Aims (hoặc bất kỳ lớp nào gọi phương thức play()) không được cập nhật để bắt (catch) hoặc khai báo ném (throws) ngoại lệ đó, các trường hợp sau có thể xảy ra:
+
+1.  Nếu PlayerException là một Checked Exception (Ngoại lệ được kiểm tra):
+    * Lỗi biên dịch (Compilation Error):** Trình biên dịch Java sẽ phát hiện ra rằng có một checked exception có thể được ném ra từ phương thức play() mà không được xử lý. Do đó, mã nguồn sẽ không biên dịch được. Trình biên dịch sẽ yêu cầu bạn phải hoặc là bọc lời gọi phương thức play() trong một khối try-catch để xử lý ngoại lệ đó, hoặc là khai báo rằng phương thức hiện tại (nơi gọi play()) cũng ném ra PlayerException (bằng cách thêm `throws PlayerException` vào khai báo phương thức). Nếu không làm một trong hai điều này, chương trình không thể được xây dựng và chạy. 
+
+2.  Nếu PlayerException là một Unchecked Exception (Ngoại lệ không được kiểm tra - ví dụ, nếu nó kế thừa từ RuntimeException):
+    * Chương trình vẫn biên dịch được:** Trình biên dịch Java không bắt buộc bạn phải xử lý các unchecked exception.
+    * Lỗi lúc chạy (Runtime Error) và Dừng chương trình đột ngột:** Nếu phương thức play() được gọi và một PlayerException (runtime) thực sự xảy ra (ví dụ: DVD có độ dài không hợp lệ), ngoại lệ này sẽ được ném ra. Vì không có khối try-catch nào trong lớp Aims để bắt nó tại điểm gọi, ngoại lệ sẽ lan truyền lên call stack.
+        * Nếu ngoại lệ này không được bắt ở bất kỳ đâu trên call stack, luồng (thread) hiện tại nơi phương thức play() được thực thi sẽ bị dừng đột ngột.
+        * Nếu đây là luồng chính của ứng dụng console, toàn bộ chương trình có thể sẽ kết thúc (crash).
+        * Trong ứng dụng JavaFX, nếu ngoại lệ xảy ra trên JavaFX Application Thread mà không được xử lý, nó có thể khiến giao diện người dùng không phản hồi hoặc toàn bộ ứng dụng JavaFX bị dừng.
+        * Thông thường, một stack trace (dấu vết ngăn xếp) của ngoại lệ sẽ được in ra luồng lỗi chuẩn (standard error stream, thường là console), cung cấp thông tin chi tiết về loại ngoại lệ, thông điệp lỗi và vị trí nó xảy ra trong mã nguồn. Điều này giúp lập trình viên gỡ lỗi nhưng không phải là cách xử lý lỗi thân thiện với người dùng cuối. 
+
+=> việc không cập nhật lớp Aims để xử lý các ngoại lệ (đặc biệt là checked exceptions) từ phương thức play() sẽ dẫn đến lỗi biên dịch hoặc lỗi runtime nghiêm trọng, làm giảm tính ổn định và độ tin cậy của ứng dụng. 
+
