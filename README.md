@@ -1,3 +1,4 @@
+20242-OOP
 1. Project Goal
    The AIMS (An Internet Media Store) project aims to deliver a robust application for managing an online media store. Its core purpose is to provide a comprehensive platform for customers to browse, purchase, and manage media, while empowering store managers with efficient inventory control.
 
